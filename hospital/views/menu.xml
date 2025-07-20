@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="menu_hospital_root"
+            name="HMS"
+    />
+
+    <menuitem
+            id="main_menu_hospital"
+            name="Main hospital"
+            parent="menu_hospital_root"
+    />
+
+    <menuitem
+            id="menu_patients_hospital"
+            name="CRUD Patients"
+            parent="main_menu_hospital"
+            action="action_patients"
+    />
+
+    <menuitem
+            id="menu_readonly_patients_hospital"
+            name="ReadOnly Patients"
+            parent="main_menu_hospital"
+            action="action_readonly_patients"
+    />
+
+
+</odoo>

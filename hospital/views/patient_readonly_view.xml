@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="patients_readonly_form_view" model="ir.ui.view">
+        <field name="name">patients.readonly.form.view</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" edit="0" string="Patients">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="birthday"/>
+                        </group>
+                    </group>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                    </div>
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+    <record id="patients_readonly_tree_view" model="ir.ui.view">
+        <field name="name">patients.readonly.tree.view</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" edit="0" string="Patients">
+                <field name="name"/>
+                <field name="gender" optional="hide"/>
+                <field name="birthday" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_readonly_patients" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>Create New Patient</p>
+        </field>
+
+        <field name="view_ids" eval="[Command.clear(),
+                          (0,0,{'view_mode':'tree', 'view_id': ref('patients_readonly_tree_view')}),
+                          (0,0,{'view_mode':'form', 'view_id': ref('patients_readonly_form_view')})]"/>
+
+    </record>
+</odoo>
