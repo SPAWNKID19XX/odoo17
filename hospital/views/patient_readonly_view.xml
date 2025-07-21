@@ -17,6 +17,18 @@
                             <field name="birthday"/>
                         </group>
                     </group>
+
+                    <notebook>
+                        <page
+                                name="appointment_tab"
+                                string="Appointments">
+                        </page>
+                        <page
+                                name="appointment_tab"
+                                string="Boris">
+                        </page>
+                    </notebook>
+
                     <!-- Chatter -->
                     <div class="oe_chatter">
                         <field name="message_follower_ids" groups="base.group_user"/>

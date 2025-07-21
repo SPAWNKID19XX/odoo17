@@ -25,5 +25,13 @@
             action="action_readonly_patients"
     />
 
+    <menuitem
+            id="menu_appointment_patients_hospital"
+            name="Appointments"
+            parent="main_menu_hospital"
+            action="action_patients_appointments"
+    />
+
+
 
 </odoo>

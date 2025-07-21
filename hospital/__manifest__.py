@@ -26,9 +26,11 @@ Odoo tutorial app hospital
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/sequence.xml',
         'views/menu.xml',
         'views/patient_readonly_view.xml',
         'views/patient_view.xml',
+        'views/appointments_view.xml',
 
 
     ],

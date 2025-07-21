@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_appointments_form_view" model="ir.ui.view">
+        <field name="name">hospital.appointments.form.view</field>
+        <field name="model">hospital.appointments</field>
+        <field name="arch" type="xml">
+            <form string="Appointments">
+                <header>
+                    <button name="statusbar_set_confirmed" string="Confirmed" type="object" class="oe_highlight"
+                            title="Mark as Confirmed" invisible="state == 'confirmed'"/>
+                    <button name="statusbar_set_ongoing" string="Ongoing" type="object" class="oe_highlight"
+                            title="Mark as Ongoing" invisible="state == 'ongoing'"/>
+                    <button name="statusbar_set_done" string="Done" type="object" class="oe_highlight"
+                            title="Mark as Done" invisible="state == 'done'"/>
+                    <button name="statusbar_set_cancelled" string="Cancelled" type="object" class="oe_highlight"
+                            title="Mark as Cancelled" invisible="state == 'cancelled'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="ref"/>
+                        <field name="user_id"/>
+                        <field name="date_appointments"/>
+                        <field name="notes"/>
+                    </group>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_appointments_tree_view" model="ir.ui.view">
+        <field name="name">hospital.appointments.tree.view</field>
+        <field name="model">hospital.appointments</field>
+        <field name="arch" type="xml">
+            <tree string="Appointments">
+                <field name="ref"/>
+                <field name="user_id"/>
+                <field name="date_appointments" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_patients_appointments" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">hospital.appointments</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>Create New Appointment</p>
+        </field>
+    </record>
+</odoo>

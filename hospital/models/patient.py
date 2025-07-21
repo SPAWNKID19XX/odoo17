@@ -7,6 +7,8 @@ class HospitalPatient(models.Model):
 
 
 
+
+
     name = fields.Char(
         string="Name",
         required=True,
