@@ -21,17 +21,18 @@ Odoo tutorial app hospital
     'depends': [
         'base',
         'mail',
+        'product',
     ],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
-        'views/menu.xml',
+        'views/patients_tags.xml',
         'views/patient_readonly_view.xml',
         'views/patient_view.xml',
         'views/appointments_view.xml',
-
+        'views/menu.xml',
 
     ],
     # only loaded in demonstration mode
@@ -39,4 +40,3 @@ Odoo tutorial app hospital
         'demo/demo.xml',
     ],
 }
-

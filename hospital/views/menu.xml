@@ -3,35 +3,48 @@
     <menuitem
             id="menu_hospital_root"
             name="HMS"
+            web_icon="hospital,static/description/icon.png"
     />
 
     <menuitem
-            id="main_menu_hospital"
-            name="Main hospital"
+            id="patients_menu_hospital"
+            name="Patients"
             parent="menu_hospital_root"
     />
 
     <menuitem
             id="menu_patients_hospital"
             name="CRUD Patients"
-            parent="main_menu_hospital"
+            parent="patients_menu_hospital"
             action="action_patients"
     />
 
     <menuitem
             id="menu_readonly_patients_hospital"
             name="ReadOnly Patients"
-            parent="main_menu_hospital"
+            parent="patients_menu_hospital"
             action="action_readonly_patients"
     />
 
     <menuitem
             id="menu_appointment_patients_hospital"
             name="Appointments"
-            parent="main_menu_hospital"
+            parent="patients_menu_hospital"
             action="action_patients_appointments"
     />
 
+    <menuitem
+            id="patients_conf_hospital"
+            name="Configuration"
+            parent="menu_hospital_root"
+    />
+
+    <menuitem
+            id="tags_appointment_patients_hospital"
+            name="Tags"
+            parent="patients_conf_hospital"
+            action="action_tags_conf_hospital_patient"
+    />
 
 
 </odoo>
