@@ -7,9 +7,10 @@
         <field name="arch" type="xml">
             <tree string="Patients" create="1" editable="top">
                 <field name="appointment_id" string="Appointment"/>
-                 <field name="product_id" string="Products"/>
-                <field name="qty" string="Quantity" />
+                <field name="product_id" string="Products"/>
+                <field name="qty" string="Quantity"/>
             </tree>
+
         </field>
     </record>
 
