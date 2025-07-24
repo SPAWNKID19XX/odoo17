@@ -23,8 +23,6 @@
                         <field name="message_ids"/>
                     </div>
                 </sheet>
-
-
             </form>
         </field>
     </record>

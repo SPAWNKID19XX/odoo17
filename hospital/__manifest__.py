@@ -32,6 +32,8 @@ Odoo tutorial app hospital
         'views/patient_readonly_view.xml',
         'views/patient_view.xml',
         'views/appointments_view.xml',
+        'views/hospital_appointment_line.xml',
+
         'views/menu.xml',
 
     ],

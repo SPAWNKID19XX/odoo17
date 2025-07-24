@@ -33,6 +33,14 @@
             action="action_patients_appointments"
     />
 
+
+    <menuitem
+            id="menu_appointment_line_patients_hospital"
+            name="Line"
+            parent="patients_menu_hospital"
+            action="action_appointment_line"
+    />
+
     <menuitem
             id="patients_conf_hospital"
             name="Configuration"
