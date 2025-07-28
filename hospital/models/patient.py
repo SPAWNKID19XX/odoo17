@@ -37,3 +37,25 @@ class HospitalPatient(models.Model):
         comodel_name='product.product',
         string='Products',
     )
+
+    appointment_ids = fields.One2many(
+        'hospital.appointments',
+        'user_id',
+    )
+
+    appointment_line_ids = fields.One2many(
+        'hospital.appointment.line',
+        'appointment_id',
+        string='All Appointment Lines',
+        compute='_compute_appointment_lines',
+        store=False
+    )
+
+    @api.depends('appointment_ids')
+    def _compute_appointment_lines(self):
+        for patient in self:
+            all_lines = self.env['hospital.appointment.line'].search([
+                ('appointment_id.user_id', '=', patient.id)
+            ])
+            patient.appointment_line_ids = all_lines
+

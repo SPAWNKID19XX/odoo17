@@ -32,11 +32,6 @@ class HospitalAppointments(models.Model):
         string='Notes',
     )
 
-    line_ids = fields.One2many(
-        'hospital.appointment.line',
-        'appointment_id',
-    )
-
 
     @api.model_create_multi
     def create(self, vals):

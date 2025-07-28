@@ -22,24 +22,7 @@
                         <field name="user_id"/>
                         <field name="date_appointments"/>
                         <field name="notes"/>
-
                     </group>
-                    <notebook>
-                        <page
-                                name="appointment_tab0"
-                                string="Appointments">
-                            <group>
-                                <tree>
-                                    <field name="line_ids"/>
-                                </tree>
-
-                            </group>
-                        </page>
-                        <page
-                                name="appointment_tab1"
-                                string="Boris">
-                        </page>
-                    </notebook>
                     <!-- Chatter -->
                     <div class="oe_chatter">
                         <field name="message_follower_ids" groups="base.group_user"/>

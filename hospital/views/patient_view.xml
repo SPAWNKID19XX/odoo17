@@ -14,8 +14,37 @@
                         <group>
                             <field name="gender"/>
                             <field name="birthday"/>
-
                         </group>
+
+                        <notebook>
+                            <page name="appointments" string="Appointments">
+                                <group>
+                                    <group>
+                                        <field name="appointment_ids"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+
+
+
+
+<!--                        <notebook>-->
+<!--                            <page-->
+<!--                                    name="appointment_tab0"-->
+<!--                                    string="Appointments">-->
+<!--                                <group>-->
+<!--                                    <tree>-->
+<!--                                        <field name="appointment_ids"/>-->
+<!--                                    </tree>-->
+
+<!--                                </group>-->
+<!--                            </page>-->
+<!--                            <page-->
+<!--                                    name="appointment_tab0"-->
+<!--                                    string="Boris">-->
+<!--                            </page>-->
+<!--                        </notebook>-->
                     </group>
                     <!-- Chatter -->
                     <div class="oe_chatter">

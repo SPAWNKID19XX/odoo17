@@ -8,4 +8,8 @@ class HospitalAppointmentLine(models.Model):
     appointment_id = fields.Many2one('hospital.appointments', string='Patient')
     product_id = fields.Many2one('product.product', string='Product')
     qty = fields.Float(string='Quantity')
+    ref = fields.Char(string='Reference', related='appointment_id.ref')
+
+
+
 
