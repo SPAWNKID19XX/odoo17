@@ -18,33 +18,15 @@
 
                         <notebook>
                             <page name="appointments" string="Appointments">
-                                <group>
-                                    <group>
-                                        <field name="appointment_ids"/>
-                                    </group>
-                                </group>
+                                <field name="appointments_ids" nolabel="1">
+                                    <tree editable="false">
+                                        <field name="ref"/>
+                                        <field name="date_appointments"/>
+
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
-
-
-
-
-<!--                        <notebook>-->
-<!--                            <page-->
-<!--                                    name="appointment_tab0"-->
-<!--                                    string="Appointments">-->
-<!--                                <group>-->
-<!--                                    <tree>-->
-<!--                                        <field name="appointment_ids"/>-->
-<!--                                    </tree>-->
-
-<!--                                </group>-->
-<!--                            </page>-->
-<!--                            <page-->
-<!--                                    name="appointment_tab0"-->
-<!--                                    string="Boris">-->
-<!--                            </page>-->
-<!--                        </notebook>-->
                     </group>
                     <!-- Chatter -->
                     <div class="oe_chatter">
