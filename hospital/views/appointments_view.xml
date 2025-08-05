@@ -37,8 +37,8 @@
         <field name="name">hospital.appointments.tree.view</field>
         <field name="model">hospital.appointments</field>
         <field name="arch" type="xml">
-            <tree string="Appointments">
-                <field name="ref"/>
+            <tree string="Appointments" editable="bottom">
+                <field name="ref" readonly="False"/>
                 <field name="user_id"/>
                 <field name="date_appointments" optional="hide"/>
             </tree>

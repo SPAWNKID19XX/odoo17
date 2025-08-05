@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="library_books_form_view" model="ir.ui.view">
+        <field name="name">library.books.form.view</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Books">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="author"/>
+                        <field name="pages"/>
+                        <field name="rental_ids">
+                            <tree>
+                                <field name="customer_name"/>
+                                <field name="rental_date"/>
+                                <field name="return_date"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="customer_name"/>
+                                        <field name="rental_date"/>
+                                        <field name="return_date"/>
+                                    </group>
+                                </group>
+
+                            </form>
+                        </field>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="library_books_tree_view" model="ir.ui.view">
+        <field name="name">library.books.tree.view</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree string="Books">
+                <field name="name"/>
+                <field name="author"/>
+                <field name="pages"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_books" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p>Create New Book</p>
+        </field>
+    </record>
+</odoo>

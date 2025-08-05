@@ -1,4 +1,3 @@
-from docutils.utils import column_width
 from odoo import models, fields, api
 
 

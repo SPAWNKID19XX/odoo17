@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="menu_library_root"
+            name="Library"
+    />
+
+    <menuitem
+            id="menu_library_books"
+            name="Books"
+            parent="menu_library_root"
+            action="action_books"
+    />
+
+    <menuitem
+            id="menu_library_books_rental"
+            name="Rent Books"
+            parent="menu_library_books"
+            action="action_registry"
+    />
+
+
+</odoo>

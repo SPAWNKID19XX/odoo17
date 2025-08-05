@@ -1,40 +1,35 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Hospital Management System",
+    'name': "library",
+
     'license': 'LGPL-3',
-    'summary': "Odoo Tutorial",
+
+    'summary': "library books management",
 
     'description': """
-Odoo tutorial app hospital
+        Management for books rent
     """,
 
-    'author': "BorisIsac",
-    'website': "###",
+    'author': "BorisInc...",
+    'website': "https://www.linkedin.com/in/boris-isac-b11a601a6",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '17.0.1.0',
+    'version': '17.0.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': [
-        'base',
-        'mail',
-        'product',
-    ],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'data/sequence.xml',
-        'views/patients_tags.xml',
-        'views/patient_readonly_view.xml',
-        'views/patient_view.xml',
-        'views/appointments_view.xml',
-        'views/hospital_appointment_line.xml',
-        'views/menu.xml',
 
+        'views/library_book.xml',
+        'views/library_rent.xml',
+
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
