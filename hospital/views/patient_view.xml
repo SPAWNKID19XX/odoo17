@@ -15,15 +15,21 @@
                             <field name="gender"/>
                             <field name="birthday"/>
                         </group>
-
                         <notebook>
                             <page name="appointments" string="Appointments">
                                 <field name="appointments_ids" nolabel="1">
                                     <tree editable="false">
                                         <field name="ref"/>
                                         <field name="date_appointments"/>
-
                                     </tree>
+                                    <form>
+                                        <group string="">
+                                            <field name="ref"/>
+                                            <field name="user_id" readonly="True"/>
+                                            <field name="date_appointments"/>
+                                            <field name="notes"/>
+                                        </group>
+                                    </form>
                                 </field>
                             </page>
                         </notebook>

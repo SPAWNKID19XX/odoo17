@@ -11,7 +11,6 @@
                 <field name="product_id" string="Products"/>
                 <field name="qty" string="Quantity"/>
             </tree>
-
         </field>
     </record>
 
@@ -22,7 +21,7 @@
         <field name="view_mode">tree</field>
         <field name="view_id" ref="hospital_appointment_line_tree_view"/>
         <field name="help" type="html">
-            <p>Это список строк назначений пациентов.</p>
+            <p>Add new Appointments</p>
         </field>
     </record>
 

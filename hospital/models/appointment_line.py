@@ -5,7 +5,7 @@ class HospitalAppointmentLine(models.Model):
     _description = 'Hospital Appointment Line'
     _rec_name = 'appointment_id'
 
-    appointment_id = fields.Many2one('hospital.appointments', string='Patient')
+    appointment_id = fields.Many2one('hospital.appointments', string='Appointment')
     product_id = fields.Many2one('product.product', string='Product')
     qty = fields.Float(string='Quantity')
     ref = fields.Char(string='Reference', related='appointment_id.ref')
