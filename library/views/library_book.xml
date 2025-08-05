@@ -5,11 +5,15 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form string="Books">
+                <header show_if="record.id">
+                    <button name="show_rentals_list" string="List Rents" type="object" class="oe_highlight"/>
+                </header>
                 <group>
                     <group>
                         <field name="name"/>
                         <field name="author"/>
                         <field name="pages"/>
+                        <field name="short_name" readonly="True"/>
                         <field name="rental_ids">
                             <tree>
                                 <field name="customer_name"/>
@@ -24,7 +28,6 @@
                                         <field name="return_date"/>
                                     </group>
                                 </group>
-
                             </form>
                         </field>
                     </group>
@@ -38,7 +41,7 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <tree string="Books">
-                <field name="name"/>
+                <field name="short_name"/>
                 <field name="author"/>
                 <field name="pages"/>
             </tree>
