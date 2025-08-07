@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_rental_document">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Library Rental Agreement</h2>
+                    <p>
+                        <strong>Book:</strong>
+                        <t t-esc="doc.book_id.name"/>
+                    </p>
+                    <p>
+                        <strong>Customer:</strong>
+                        <t t-esc="doc.customer_name"/>
+                    </p>
+                    <p>
+                        <strong>Rental Date:</strong>
+                        <t t-esc="doc.rental_date"/>
+                    </p>
+                    <p>
+                        <strong>Return Date:</strong>
+                        <t t-esc="doc.return_date"/>
+                    </p>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "library",
+    'name': "taxi",
 
-    'license': 'LGPL-3',
-
-    'summary': "library books management",
+    'summary': "Taxi management app",
 
     'description': """
-        Management for books rent
+Long description of module's purpose
     """,
 
-    'author': "BorisInc...",
-    'website': "https://www.linkedin.com/in/boris-isac-b11a601a6",
+    'author': "BorisIsac",
+    'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -24,14 +22,10 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-
-        'report/book_rent_report.xml',
-        'report/report_rental_document.xml',
-
-        'views/library_book.xml',
-        'views/library_rent.xml',
-        'views/menu.xml',
+        # 'security/ir.model.access.csv',
+        'data/feature_car.xml',
+        'views/views.xml',
+        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
