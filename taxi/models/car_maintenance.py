@@ -1,8 +1,8 @@
 from odoo import models, fields
 
-class CarMaintence(models.Model):
-    _name = 'car.maintence'
-    _description = 'Car Maintence'
+class CarMaintenance(models.Model):
+    _name = 'car.maintenance'
+    _description = 'Car Maintenance'
 
     car_id = fields.Many2one(
         'car.fleet',

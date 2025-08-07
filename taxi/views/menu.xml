@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+            id="menu_taxi_root"
+            name="Taxi"
+    />
+
+    <menuitem
+            id="menu_car_driver"
+            name="Drivers"
+            parent="menu_taxi_root"
+            action="action_car_driver"
+    />
+
+    <menuitem
+            id="menu_car_fleet"
+            name="Car"
+            parent="menu_taxi_root"
+    />
+
+    <menuitem
+            id="menu_car_fleet_crud"
+            name="Cars"
+            parent="menu_car_fleet"
+            action="action_car_fleet"
+    />
+
+    <menuitem
+            id="menu_car_trip"
+            name="Trip"
+            parent="menu_car_fleet"
+            action="action_car_trip"
+    />
+    <menuitem
+            id="menu_car_maintenance"
+            name="Maintenance"
+            parent="menu_car_fleet"
+            action="action_car_maintenance"
+    />
+</odoo>

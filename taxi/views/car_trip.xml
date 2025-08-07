@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="taxi_trip_form_view" model="ir.ui.view">
+        <field name="name">taxi.trip.form.view</field>
+        <field name="model">car.trip</field>
+        <field name="arch" type="xml">
+            <form string="Trip">
+                <group>
+                    <group>
+                        <group>
+                            <field name="car_id"/>
+                            <field name="driver_id"/>
+                            <field name="start_time"/>
+                        </group>
+                        <group>
+                            <field name="end_time"/>
+                            <field name="distance_km"/>
+                            <field name="duration_hours"/>
+                        </group>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="taxi_trip_tree_view" model="ir.ui.view">
+        <field name="name">taxi.trip.tree.view</field>
+        <field name="model">car.trip</field>
+        <field name="arch" type="xml">
+            <tree string="Trip">
+                <field name="car_id"/>
+                <field name="driver_id"/>
+                <field name="distance_km"/>
+                <field name="duration_hours"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_car_trip" model="ir.actions.act_window">
+        <field name="name">Trip</field>
+        <field name="res_model">car.trip</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Create New Trip</p>
+        </field>
+    </record>
+</odoo>

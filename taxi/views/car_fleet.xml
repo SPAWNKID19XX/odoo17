@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="taxi_fleet_form_view" model="ir.ui.view">
+        <field name="name">taxi.fleet.form.view</field>
+        <field name="model">car.fleet</field>
+        <field name="arch" type="xml">
+            <form string="Fleet">
+                <group>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="license_plate"/>
+                            <field name="made_year"/>
+                        </group>
+                        <group>
+                            <field name="feature_ids" widget="many2many_tags"/>
+                            <field name="car_age"/>
+                        </group>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="taxi_fleet_tree_view" model="ir.ui.view">
+        <field name="name">taxi.fleet.tree.view</field>
+        <field name="model">car.fleet</field>
+        <field name="arch" type="xml">
+            <tree string="Fleet">
+                <field name="license_plate"/>
+                <field name="made_year"/>
+                <field name="driver_id"/>
+                <field name="car_age"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_car_fleet" model="ir.actions.act_window">
+        <field name="name">Fleet</field>
+        <field name="res_model">car.fleet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Create New Car</p>
+        </field>
+    </record>
+</odoo>

@@ -9,7 +9,10 @@ class CarFleet(models.Model):
     license_plate = fields.Char()
     made_year = fields.Integer()
     driver_id = fields.Many2one('car.driver', string='Driver', required=True)
-    feature_ids = fields.Many2many()
+    feature_ids = fields.Many2many(
+        comodel_name='car.feature',
+        string='Features',
+    )
     car_age = fields.Integer(
         string='Car Age',
         compute='car_age',

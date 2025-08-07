@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="feature_abs" model="car.feature">
-        <field name="code">ABS</field>
+        <field name="code">abs</field>
+        <field name="name">ABS</field>
     </record>
     <record id="feature_ac" model="car.feature">
-        <field name="code">AC</field>
+        <field name="code">ac</field>
+        <field name="name">AC</field>
     </record>
     <record id="feature_gps" model="car.feature">
-        <field name="code">GPS</field>
+        <field name="code">gps</field>
+        <field name="name">GPS</field>
     </record>
     <record id="feature_airbag" model="car.feature">
-        <field name="code">AirBag</field>
+        <field name="code">airbag</field>
+        <field name="name">Airbag</field>
     </record>
     <record id="feature_camera" model="car.feature">
-        <field name="code">Camera</field>
+        <field name="code">camera</field>
+        <field name="name">Camera</field>
     </record>
 </odoo>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "taxi",
-
+    'license': 'LGPL-3',
     'summary': "Taxi management app",
 
     'description': """
@@ -16,16 +16,18 @@ Long description of module's purpose
     # for the full list
     'category': 'Uncategorized',
     'version': '17.0.0.1',
-
     # any module necessary for this one to work correctly
     'depends': ['base'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'data/feature_car.xml',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/car_fleet.xml',
+        'views/car_driver.xml',
+        'views/car_trip.xml',
+        'views/car_maintenance.xml',
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
