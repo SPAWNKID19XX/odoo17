@@ -68,5 +68,5 @@ The module should allow the management of cars, drivers, trips, maintenance, and
 
 💾 Additional Features:
     Add demo data using data/demo.xml or a Python script
-    Use _sql_constraints to enforce uniqueness of license_plate
-    Add @api.constrains to ensure that start_time < end_time in trips
+    Use _sql_constraints to enforce uniqueness of license_plate ---> DONE
+    Add @api.constrains to ensure that start_time < end_time in trips ---> DONE

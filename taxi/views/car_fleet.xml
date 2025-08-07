@@ -4,7 +4,7 @@
         <field name="name">taxi.fleet.form.view</field>
         <field name="model">car.fleet</field>
         <field name="arch" type="xml">
-            <form string="Fleet">
+            <form string="Car">
                 <group>
                     <group>
                         <group>
@@ -26,7 +26,7 @@
         <field name="name">taxi.fleet.tree.view</field>
         <field name="model">car.fleet</field>
         <field name="arch" type="xml">
-            <tree string="Fleet">
+            <tree string="Car">
                 <field name="license_plate"/>
                 <field name="made_year"/>
                 <field name="driver_id"/>
@@ -36,7 +36,7 @@
     </record>
 
     <record id="action_car_fleet" model="ir.actions.act_window">
-        <field name="name">Fleet</field>
+        <field name="name">Car</field>
         <field name="res_model">car.fleet</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
