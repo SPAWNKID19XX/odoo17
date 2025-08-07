@@ -6,17 +6,17 @@
             name="Taxi"
     />
 
-    <menuitem
-            id="menu_car_driver"
-            name="Drivers"
-            parent="menu_taxi_root"
-            action="action_car_driver"
-    />
 
     <menuitem
             id="menu_car_fleet"
-            name="Car"
+            name="Car Fleet"
             parent="menu_taxi_root"
+    />
+    <menuitem
+            id="menu_car_driver"
+            name="Drivers"
+            parent="menu_car_fleet"
+            action="action_car_driver"
     />
 
     <menuitem

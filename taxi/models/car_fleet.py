@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from dateutil.utils import today
 from odoo import models, api, fields
 
 class CarFleet(models.Model):
@@ -19,10 +21,15 @@ class CarFleet(models.Model):
         store=True,
     )
 
-
+    @api.depends('made_year')
     def _compute_car_age(self):
-        today = datetime.today().year
-        self.car_age = today - self.made_year
+        this_year = datetime.today().year
+        for record in self:
+            if record.made_year and record.made_year < this_year:
+                record.car_age = this_year - record.made_year
+            else:
+                record.car_age = 0
+
 
 
     #todo smart button show_trips

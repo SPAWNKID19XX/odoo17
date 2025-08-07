@@ -10,4 +10,4 @@ class CarDriver(models.Model):
     license_number = fields.Char(string="License Number", required=True)
     car_ids = fields.One2many('car.fleet', 'driver_id', string="Drivers")
 
-    #todo smart button Driver's trips
+    #TODO smart button Driver's trips
