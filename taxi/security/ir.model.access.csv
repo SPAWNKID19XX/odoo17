@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+taxi.access_car_fleet,access_car_fleet,taxi.model_car_fleet,base.group_user,1,1,1,1
+taxi.access_car_driver,access_car_driver,taxi.model_car_driver,base.group_user,1,1,1,1
+taxi.access_car_feature,access_car_feature,taxi.model_car_feature,base.group_user,1,1,1,1
+taxi.access_car_trip,access_car_trip,taxi.model_car_trip,base.group_user,1,1,1,1
+taxi.access_car_maintenance,access_car_maintenance,taxi.model_car_maintenance,base.group_user,1,1,1,1

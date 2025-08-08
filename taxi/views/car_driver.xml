@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="taxi_driver_form_view" model="ir.ui.view">
+        <field name="name">taxi.driver.form.view</field>
+        <field name="model">car.driver</field>
+        <field name="arch" type="xml">
+            <form string="Driver">
+                <header show_if='record.id'>
+                    <button name="show_trips_list" string="Trips list" type="object" class="oe_highlight"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone_number"/>
+                        <field name="license_number"/>
+                        <field name="trip_ids"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="taxi_driver_tree_view" model="ir.ui.view">
+        <field name="name">taxi.driver.tree.view</field>
+        <field name="model">car.driver</field>
+        <field name="arch" type="xml">
+            <tree string="Driver">
+                <field name="name"/>
+                <field name="phone_number"/>
+                <field name="license_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_car_driver" model="ir.actions.act_window">
+        <field name="name">Driver</field>
+        <field name="res_model">car.driver</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Create New Driver</p>
+        </field>
+    </record>
+</odoo>

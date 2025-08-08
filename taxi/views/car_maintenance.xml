@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="taxi_maintenance_form_view" model="ir.ui.view">
+        <field name="name">taxi.maintenance.form.view</field>
+        <field name="model">car.maintenance</field>
+        <field name="arch" type="xml">
+            <form string="Maintenance">
+                <group>
+                    <group>
+
+                            <field name="car_id"/>
+                            <field name="date"/>
+                            <field name="cost"/>
+                            <field name="description"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="taxi_maintenance_tree_view" model="ir.ui.view">
+        <field name="name">taxi.maintenance.tree.view</field>
+        <field name="model">car.maintenance</field>
+        <field name="arch" type="xml">
+            <tree string="Maintenance">
+                <field name="car_id"/>
+                <field name="date"/>
+                <field name="cost"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_car_maintenance" model="ir.actions.act_window">
+        <field name="name">Maintenance</field>
+        <field name="res_model">car.maintenance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Create New Maintenance</p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,66 @@
+💼 Project: CarFleetPro — Fleet Management System
+🎯 Objective:
+
+Create a custom Odoo module to manage a company's fleet of vehicles (taxi/delivery).
+The module should allow the management of cars, drivers, trips, maintenance, and reporting.
+📦 Project Structure:
+🧱 Models:
+1. car.fleet ---> DONE
+    name (Char) ---> Done
+    license_plate (Char) ---> Done
+    made_year (Integer) ---> Done
+    driver_id (Many2one → car.driver) ---> Done
+    feature_ids (Many2many → car.feature) ---> Done
+    car_age (Computed field) ---> Done
+    Smart button: "View all Trips" ---> DONE
+
+2. car.driver ---> DONE
+    name (Char) ---> Done
+    phone (Char) ---> Done
+    license_number (Char) ---> Done
+    car_ids (One2many → car.fleet) ---> Done
+    Smart button: "Driver's Trips" ---> DONE
+
+3. car.trip ---> Done
+    car_id (Many2one) ---> Done
+    driver_id (Many2one) ---> Done
+    start_time (Datetime) ---> Done
+    end_time (Datetime) ---> Done
+    distance_km (Float)---> Done
+    duration_hours (Computed field) ---> Done
+
+4. car.feature ---> Done
+    name (Char) ---> Done
+    Examples: GPS, ABS, Camera, Electric, etc. ---> Done
+
+5. car.maintenance ---> Done
+    car_id (Many2one) ---> Done
+    date (Date) ---> Done
+    description (Text) ---> Done
+    cost (Float) ---> Done
+
+🧠 Technical Requirements (to implement):
+    Use @api.depends for: ---> DONE
+        car_age (in car.fleet)---> DONE
+        duration_hours (in car.trip) ---> DONE
+
+    Smart buttons: ---> DONE
+        In car.fleet: show all related trips ---> DONE
+        In car.driver: show all trips by this driver ---> DONE
+
+    XML Views: ---> DONE
+        List (tree) ---> DONE
+        Form ---> DONE
+        Search views for all models ---> DONE
+
+    Menu:
+        Top-level: Car Fleet ---> Done
+            Cars ---> Done
+            Drivers ---> Done
+            Trips ---> Done
+            Maintenance ---> Done
+
+
+💾 Additional Features:
+    Use _sql_constraints to enforce uniqueness of license_plate ---> DONE
+    Add @api.constrains to ensure that start_time < end_time in trips ---> DONE
