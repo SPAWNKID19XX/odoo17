@@ -4,6 +4,7 @@
     <menuitem
             id="menu_taxi_root"
             name="Taxi"
+            web_icon="taxi,static/description/icon.png"
     />
 
 

@@ -2,6 +2,7 @@ from datetime import datetime
 from odoo.exceptions import ValidationError
 from odoo import models, api, fields
 
+
 class CarFleet(models.Model):
     _name = 'car.fleet'
     _description = 'Car Fleet'
@@ -23,10 +24,17 @@ class CarFleet(models.Model):
         comodel_name='car.feature',
         string='Features',
     )
+
     car_age = fields.Integer(
         string='Car Age',
         compute='_compute_car_age',
         store=True,
+    )
+
+    trip_ids = fields.One2many(
+        comodel_name="car.trip",
+        inverse_name="car_id",
+        string="Trips"
     )
 
     @api.depends('made_year')
@@ -45,6 +53,19 @@ class CarFleet(models.Model):
             if record.made_year and record.made_year > current_year:
                 raise ValidationError("Year Made cannot be in the future.")
 
-
-
-    #TODO smart button show_trips
+    def show_trips_list(self):
+        car_id = self.id
+        # print('Smart button For book', book_id)
+        car_trip_ids = self.env['car.trip'].search([('car_id', '=', car_id)])
+        # print(car_trip_ids)
+        # for trip in car_trip_ids:
+        #     print(trip.id, trip.car_id, trip.distance_km, trip.duration_hours )
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Trips',
+            'view_mode': 'tree,form',
+            'res_model': 'car.trip',
+            'domain': [('car_id', '=', car_id)],
+            'context': {'default_book_id': car_id},
+            'target': 'new',
+        }

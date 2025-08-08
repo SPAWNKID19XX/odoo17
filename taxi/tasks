@@ -5,21 +5,21 @@ Create a custom Odoo module to manage a company's fleet of vehicles (taxi/delive
 The module should allow the management of cars, drivers, trips, maintenance, and reporting.
 📦 Project Structure:
 🧱 Models:
-1. car.fleet
+1. car.fleet ---> DONE
     name (Char) ---> Done
     license_plate (Char) ---> Done
     made_year (Integer) ---> Done
     driver_id (Many2one → car.driver) ---> Done
     feature_ids (Many2many → car.feature) ---> Done
     car_age (Computed field) ---> Done
-    Smart button: "View Trips"
+    Smart button: "View all Trips" ---> DONE
 
-2. car.driver
+2. car.driver ---> DONE
     name (Char) ---> Done
     phone (Char) ---> Done
     license_number (Char) ---> Done
     car_ids (One2many → car.fleet) ---> Done
-    Smart button: "Driver's Trips"
+    Smart button: "Driver's Trips" ---> DONE
 
 3. car.trip ---> Done
     car_id (Many2one) ---> Done
@@ -40,33 +40,27 @@ The module should allow the management of cars, drivers, trips, maintenance, and
     cost (Float) ---> Done
 
 🧠 Technical Requirements (to implement):
-    Use @api.depends for:
-        car_age (in car.fleet)
-        duration_hours (in car.trip)
+    Use @api.depends for: ---> DONE
+        car_age (in car.fleet)---> DONE
+        duration_hours (in car.trip) ---> DONE
 
-    Smart buttons:
-        In car.fleet: show all related trips
-        In car.driver: show all trips by this driver
+    Smart buttons: ---> DONE
+        In car.fleet: show all related trips ---> DONE
+        In car.driver: show all trips by this driver ---> DONE
 
-    XML Views:
-        List (tree)
-        Form
-        Search views for all models
+    XML Views: ---> DONE
+        List (tree) ---> DONE
+        Form ---> DONE
+        Search views for all models ---> DONE
 
     Menu:
         Top-level: Car Fleet ---> Done
             Cars ---> Done
             Drivers ---> Done
             Trips ---> Done
-            Features
             Maintenance ---> Done
 
-    Access rights:
-        Create two groups: "Fleet Manager" and "Fleet Operator"
-        Optional: Add an Action Server — e.g., button to "Archive Old Trips"
-        Optional: Generate PDF report with car trip history
 
 💾 Additional Features:
-    Add demo data using data/demo.xml or a Python script
     Use _sql_constraints to enforce uniqueness of license_plate ---> DONE
     Add @api.constrains to ensure that start_time < end_time in trips ---> DONE

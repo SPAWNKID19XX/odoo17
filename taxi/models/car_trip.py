@@ -33,3 +33,5 @@ class CarTrip(models.Model):
                     'Duration hours cannot be negative.'
                 )
 
+
+

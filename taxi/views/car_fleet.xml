@@ -5,6 +5,9 @@
         <field name="model">car.fleet</field>
         <field name="arch" type="xml">
             <form string="Car">
+                <header show_if="record.id">
+                    <button name="show_trips_list" string="Trips List" type="object" class="oe_highlight"/>
+                </header>
                 <group>
                     <group>
                         <group>
@@ -16,6 +19,7 @@
                             <field name="feature_ids" widget="many2many_tags"/>
                             <field name="car_age"/>
                         </group>
+                        <field name="trip_ids"/>
                     </group>
                 </group>
             </form>
@@ -35,10 +39,44 @@
         </field>
     </record>
 
+    <record id="view_car_fleet_search" model="ir.ui.view">
+        <field name="name">car.fleet.search</field>
+        <field name="model">car.fleet</field>
+        <field name="arch" type="xml">
+            <search string="Search Fleets">
+                <!-- Поля для поиска -->
+                <field name="name" string="Fleet Name"/>
+                <field name="license_plate"/>
+                <field name="driver_id"/>
+                <field name="made_year"/>
+                <field name="feature_ids"/>
+
+                <!-- Пример простых фильтров -->
+                <filter name="year_after_2018" string="Year ≥ 2018"
+                        domain="[('made_year','>=',2018)]"/>
+                <filter name="year_before_2010" string="Year ≤ 2010"
+                        domain="[('made_year','&lt;=',2010)]"/>
+
+                <!-- Группировки -->
+                <group expand="0" string="Group By">
+                    <filter name="group_driver" string="Driver" context="{'group_by': 'driver_id'}"/>
+                    <filter name="group_year" string="Year" context="{'group_by': 'made_year'}"/>
+                </group>
+
+                <!-- Боковая панель -->
+                <searchpanel>
+                    <field name="driver_id" select="multi"/>
+                    <field name="feature_ids" select="multi"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record id="action_car_fleet" model="ir.actions.act_window">
         <field name="name">Car</field>
         <field name="res_model">car.fleet</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_car_fleet_search"/>
         <field name="help" type="html">
             <p>Create New Car</p>
         </field>

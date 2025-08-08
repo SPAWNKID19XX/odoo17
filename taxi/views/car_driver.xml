@@ -5,12 +5,15 @@
         <field name="model">car.driver</field>
         <field name="arch" type="xml">
             <form string="Driver">
+                <header show_if='record.id'>
+                    <button name="show_trips_list" string="Trips list" type="object" class="oe_highlight"/>
+                </header>
                 <group>
                     <group>
                         <field name="name"/>
                         <field name="phone_number"/>
                         <field name="license_number"/>
-                        <field name="car_ids"/>
+                        <field name="trip_ids"/>
                     </group>
                 </group>
             </form>
